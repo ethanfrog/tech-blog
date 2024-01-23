@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { Cart } = require('../../models');
+const { Comment } = require('../../models');
 
 router.get('/', async (req, res) => {
   try {
-    // const CategoryData = await Category.findAll({});
-    // res.render('cart');
+    // const CommentData = await Category.findAll({});
+    // res.render('comment');
   } catch (err) {
     res.status(500).json(err);
     console.log(err);
