@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS fake_store;
-CREATE DATABASE fake_store;
+DROP DATABASE IF EXISTS tech_blog;
+CREATE DATABASE tech_blog;

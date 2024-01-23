@@ -1,43 +1,26 @@
 // Import models
 const User = require('./User');
-const Product = require('./Product');
-const Cart = require('./Cart');
-const Category = require('./Category');
+const Post = require('./Post');
+const Comment = require('./Comment');
 
-
-// Table Relationships
-
-// Cart belongs to User
-Cart.belongsTo(User, {
+Post.belongsTo(User, {
     foreignKey: 'user_id',
 });
-// User has one Cart
-User.hasOne(Cart, {
+User.hasMany(Post, {
     foreignKey: 'user_id',
 });
 
-// Product belongs to Cart
-Product.belongsTo(Cart, {
-    foreignKey: 'cart_id',
+Comment.belongsTo(Post, {
+    foreignKey: 'post_id',
 });
-// Cart has many Products
-Cart.hasMany(Product, {
-    foreignKey: 'cart_id',
+Post.hasMany(Comment, {
+    foreignKey: 'post_id',
 });
 
-// Product belongs to Category
-Product.belongsTo(Category, {
-    foreignKey: 'category_id',
-});
-// Category has many Product
-Category.hasMany(Product, {
-    foreignKey: 'category_id',
-});
 
 
 module.exports = {
     User,
-    Product,
-    Cart,
-    Category,
+    Post,
+    Comment,
 };
